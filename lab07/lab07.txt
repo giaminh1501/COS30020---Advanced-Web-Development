@@ -1,0 +1,46 @@
+// create table cars
+CREATE TABLE cars (
+    	car_id		INT PRIMARY KEY AUTO_INCREMENT
+    	,make		VARCHAR(50)
+    	,model		VARCHAR(50)
+    	,price		DECIMAL
+    	,yom		YEAR
+    );
+
+// insert data into table cars
+INSERT INTO cars VALUES (1, "Holden", "Astra", 14000, 2005);
+INSERT INTO cars VALUES (2, "BMW", "X3", 35000, 2004);
+INSERT INTO cars VALUES (3, "Ford", "Falcon", 39000, 2011);
+INSERT INTO cars VALUES (4, "Toyota", "Corolla", 20000, 2012);
+INSERT INTO cars VALUES (5, "Holden", "Commodore", 13500, 2005);
+INSERT INTO cars VALUES (6, "Holden", "Astra", 8000, 2001);
+INSERT INTO cars VALUES (7, "Holden", "Commodore", 28000, 2009);
+INSERT INTO cars VALUES (8, "Ford", "Falcon", 14000, 2007);
+INSERT INTO cars VALUES (9, "Ford", "Falcon", 7000, 2003);
+INSERT INTO cars VALUES (10, "Ford", "Laser", 10000, 2010);
+INSERT INTO cars VALUES (11, "Mazda", "RX-7", 26000, 2000);
+INSERT INTO cars VALUES (12, "Toyota", "Corolla", 12000, 2001);
+INSERT INTO cars VALUES (13, "Mazda", "3", 14500, 2009);
+
+// return all records from table cars
+SELECT * FROM cars;
+
+// return make, model and price field from table cars, sorted by make and model
+SELECT make, model, price 
+FROM cars 
+ORDER BY make AND model;
+
+// return make and model field from table cars where price equals 20000$ or more
+SELECT make, model 
+FROM cars 
+WHERE price >= 20000;
+
+// return make and model field from table cars where price lower than 15000$
+SELECT make, model 
+FROM cars 
+WHERE price < 15000;
+
+// return the average price of different make from table cars
+SELECT make, AVG(price) AS avg_price
+FROM cars
+GROUP BY make;
